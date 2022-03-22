@@ -7,17 +7,15 @@ class Scraper:
     def __init__(self, product_id):
         self.product_id = product_id
 
-    def get_all_opinion(self):
+    def get_all_opinions(self):
         page_html = requests.get(self.get_product_url())
         soup = BeautifulSoup(page_html.text, 'html.parser')
         user_reviews = soup.find_all("div", class_="user-post__body")
         reviews = []
         for review in user_reviews:
             review_details = self.get_review_details(review)
-            # remove comments from array
             if review_details["author"] is None or review_details[
-                    'author'] == " Użytkownik Ceneo " or review_details[
-                        "recomendation"] is None:
+                    "score"] is None:
                 continue
             reviews.append(review_details)
         return reviews
@@ -46,8 +44,8 @@ class Scraper:
         if dislike_button is not None:
             review_details["dislikes"] = dislike_button.find("span").text
 
-        review_details["props"] = 0
-        review_details["cons"] = 0
+        review_details["props"] = None
+        review_details["cons"] = None
         features = review.find_all("div", class_="review-feature__col")
 
         if (len(features) > 0):
