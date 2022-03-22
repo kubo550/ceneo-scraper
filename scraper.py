@@ -32,7 +32,7 @@ class Scraper:
         review_details["opinion"] = get_value_for_element(
             review, "div", "user-post__text")
         review_details["recomendation"] = get_value_for_element(
-            review, "em", "recommended")
+            review, "em", "recommended") or "Nie polecam"
         review_details["score"] = get_value_for_element(
             review, "span", "user-post__score-count")
 
