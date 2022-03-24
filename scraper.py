@@ -28,7 +28,7 @@ class Scraper:
         review_details["author"] = get_value_for_element(
             review, "span", "user-post__author-name")
         review_details["comment_date"] = get_review_data(review)
-        review_details["purchase_date"] = get_purhase_date(review)
+        review_details["purchase_date"] = get_purhase_date(review) or "Brak"
         review_details["opinion"] = get_value_for_element(
             review, "div", "user-post__text")
         review_details["recomendation"] = get_value_for_element(

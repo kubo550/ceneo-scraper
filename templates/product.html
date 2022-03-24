@@ -32,16 +32,21 @@
         </ul>
       </header>
 
-      {{error}}
+      {% if error %}
+
+      <div class="alert alert-danger" role="alert">{{ error }}</div>
+
+      {% endif %}
 
       <form action="/product" method="GET">
         <div class="form-group">
-          <label for="id">Email address:</label>
+          <label for="id">Wpisz id produktu</label>
           <input
             type="text"
             class="form-control"
             placeholder="Enter product id"
             id="id"
+            value="103735237"
             name="product_id"
           />
         </div>
