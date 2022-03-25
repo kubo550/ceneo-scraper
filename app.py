@@ -1,5 +1,6 @@
 from scraper import Scraper
 from flask import Flask, render_template, request
+from stats import Stats
 import jsonpickle
 
 my_product_id = "103735237"
@@ -14,16 +15,18 @@ def index():
     return render_template('index.html')
 
 
+reviews = []
+
 @app.route(rule='/product', methods=['GET'])
 def _product():
     product_id = request.args.get('product_id')
 
-    print(product_id)
     if product_id is None:
         return render_template('product.html')
     try:
         ceneo_scraper = Scraper(product_id)
         product_reviews = ceneo_scraper.get_all_opinions()
+     
         with open(file='./static/data.json', mode='w') as f:
             jsonpickle.set_encoder_options('json', indent=2)
             f.write(jsonpickle.encode(product_reviews))
@@ -32,7 +35,7 @@ def _product():
         return render_template('opinion.html', product_reviews=product_reviews, json=json_product_reviews, number_of_reviews=len(product_reviews))
     except Exception as e:
         print("Error: ", e)
-        return render_template('product.html', error=e)
+        return render_template('product.html', error="Id danego produktu nie isnieje ")
 
 
 
@@ -41,11 +44,18 @@ def _product():
 def about():
     return render_template('about.html')
 
-
-
 @app.route(rule='/opinion', methods=['GET'])
 def opinion():     
-        return render_template('product.html', error="Aby przejść do strony opinii, wpisz id produktu.") 
+    return render_template('product.html', error="Aby przejść do strony opinii, wpisz id produktu.") 
+
+
+@app.route(rule='/details', methods=['GET'])
+def details():
+    product_data = Stats.get_recomendations(reviews)
+    rating = Stats.get_ratings(reviews)
+    print(rating)
+    return render_template('details.html', id="103735237", product_data=product_data, rating=rating)
+
 
 if __name__ == '__main__':
     app.run()

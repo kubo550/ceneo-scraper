@@ -79,6 +79,7 @@ def get_review_data(review):
     return elements[0].get('datetime')
 
 
+
 def get_purhase_date(review):
     elements = review.find_all("time")
     if len(elements) < 2:
