@@ -1,150 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jakub Kurdziel App</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-      crossorigin="anonymous"
-    />
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jakub Kurdziel App</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 
-    <style>
-      canvas {
-        margin: 0 auto;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Navbar -->
-    <div class="container">
-      <header class="d-flex justify-content-center py-3">
-        <ul class="nav nav-pills">
-          <li class="nav-item">
-            <a href="/" class="nav-link" aria-current="page">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="/about" class="nav-link">O autorze</a>
-          </li>
-          <li class="nav-item">
-            <a href="/product" class="nav-link">Ekstrakcja opinii</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link active">Lista produktów</a>
-          </li>
-        </ul>
-      </header>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-      <h1>
-        Przeglądasz Statystyki dla produktu od id
-        <a href="https://www.ceneo.pl/{{ id }}" target="_blank"> {{ id }} </a>
-      </h1>
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
 
-      <canvas id="myChart" width="700" height="700"></canvas>
-      <canvas id="myChart2" width="1400" height="700"></canvas>
-    </div>
 
-    <script>
-      let product_data = "{{ product_data }}";
-      product_data = extractDataFromFlask(product_data);
+  <style>
+    canvas {
+      margin: 0 auto;
+    }
+  </style>
+</head>
 
-      let score = "{{ rating }}";
-      score = extractDataFromFlask(score);
+<body>
+  <!-- Navbar -->
+  <div class="container">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a href="/" class="nav-link" aria-current="page">Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="/about" class="nav-link">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a href="/product" class="nav-link active">Ekstract Opinions</a>
+        </li>
+        <li class="nav-item">
+          <a href="/product-list" class="nav-link">Products List</a>
+        </li>
+      </ul>
+    </header>
 
-      const labels = Object.keys(product_data).map(name =>
-        name.replace("_", " ")
-      );
-      const dataValues = Object.values(product_data);
-      const data = {
-        labels: labels,
-        datasets: [
-          {
-            label: "Dataset 1",
-            data: dataValues,
-            backgroundColor: ["#36A2EB", "#FF6384"],
+    <h1 class="text-light mt-3">
+      {{ product_name }}
+    </h1>
+
+    <!-- a href go back -->
+    <a href="/product?product_id={{ id }}" class="btn btn-primary mt-3">Go back</a>
+
+    <canvas id="myChart" width="700" height="700"></canvas>
+    <canvas id="myChart2" width="1400" height="700"></canvas>
+  </div>
+
+  <script>
+    let product_data = "{{ product_data }}";
+    product_data = extractDataFromFlask(product_data);
+
+    let score = "{{ rating }}";
+    score = extractDataFromFlask(score);
+
+    const labels = Object.keys(product_data).map(name =>
+      name.replace("_", " ")
+    );
+    const dataValues = Object.values(product_data);
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "Dataset 1",
+          data: dataValues,
+          backgroundColor: ["#36A2EB", "#FF6384"],
+        },
+      ],
+    };
+
+    const config = {
+      type: "pie",
+      data,
+      options: {
+        borderColor: "#000",
+        responsive: false,
+        plugins: {
+          legend: {
+            position: "top",
           },
-        ],
-      };
-
-      const config = {
-        type: "pie",
-        data,
-        options: {
-          responsive: false,
-          plugins: {
-            legend: {
-              position: "top",
-            },
-            title: {
-              display: true,
-              text: "Opinie produktu",
-            },
+          title: {
+            display: true,
+            text: "Rozkłada rekomendacji",
           },
         },
-      };
+      },
+    };
 
-      const myChart = new Chart(document.getElementById("myChart"), config);
+    const myChart = new Chart(document.getElementById("myChart"), config);
 
-      const barSortedData = Object.entries(score).sort((a, b) =>
-        a[0] > b[0] ? 1 : -1
-      );
+    const barSortedData = Object.entries(score).sort((a, b) =>
+      a[0] > b[0] ? 1 : -1
+    );
 
-      const data2 = {
-        labels: barSortedData.map(x => x[0]),
-        datasets: [
-          {
-            label: "Ocena produktu",
-            backgroundColor: [
-              "#FF0000",
-              "#ff6600",
-              "#ff9900",
-              "#FFCC00",
-              "#FFFF00",
-              "#ccff00",
-              "#99ff00",
-              "#33ff00",
-              "#00FF00",
-            ],
+    const data2 = {
+      labels: barSortedData.map(x => x[0]),
+      datasets: [
+        {
+          label: "Ocena produktu",
+          backgroundColor: [
+            "#FF0000",
+            "#FF3300",
+            "#ff6600",
+            "#ff9900",
+            "#FFCC00",
+            "#FFFF00",
+            "#ccff00",
+            "#99ff00",
+            "#33ff00",
+            "#00FF00",
+          ],
 
-            data: barSortedData.map(x => x[1]),
+
+          data: barSortedData.map(x => x[1]),
+        },
+      ],
+    };
+
+    const config2 = {
+      type: "bar",
+      data: data2,
+      backgroundColor: "rgba(0, 0, 0, 0.1)",
+      options: {
+        responsive: false,
+        plugins: {
+          legend: {
+            position: "top",
           },
-        ],
-      };
-
-      const config2 = {
-        type: "bar",
-        data: data2,
-        options: {
-          responsive: false,
-          plugins: {
-            legend: {
-              position: "top",
-            },
-            title: {
-              display: true,
-              text: "Ilość gwiazdek danego produktu",
-            },
+          title: {
+            display: true,
+            text: "Ilość gwiazdek danego produktu",
           },
         },
-      };
+      },
+    };
 
-      const myChart2 = new Chart(document.getElementById("myChart2"), config2);
+    const myChart2 = new Chart(document.getElementById("myChart2"), config2);
 
-      function extractDataFromFlask(data) {
-        return JSON.parse(
-          data
-            .replace(/&#39;/gm, '"')
-            .replace(/True/gm, "true")
-            .replace(/False/gm, "false")
-            .replace(/None/gm, "null")
-            .replace(/\n/gm, "")
-        );
-      }
-    </script>
-  </body>
+    function extractDataFromFlask(data) {
+      return JSON.parse(
+        data
+          .replace(/&#39;/gm, '"')
+          .replace(/True/gm, "true")
+          .replace(/False/gm, "false")
+          .replace(/None/gm, "null")
+          .replace(/\n/gm, "")
+      );
+    }
+  </script>
+</body>
+
 </html>

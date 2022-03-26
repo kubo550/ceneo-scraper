@@ -3,3 +3,12 @@ body {
     padding: 0;
     background-color: rgba(13,17,23,255);
 }
+p ,h1, h2, h3, h4, h5, h6 {
+    color: #f8f9fa;
+}
+
+.home-table {
+     {
+        color: #f8f9fa !important;
+    }
+}

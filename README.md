@@ -6,7 +6,7 @@
   <h3 align="center">Ceneo scraper</h3>
 
   <p align="center">
-    Specjial python project for Cracow Economic University!
+     Application to extract opinions from Ceneo.pl website.
     <br />
   </p>
 </div>
@@ -57,7 +57,22 @@ _Below is an example of how you can instruct your audience on installing and set
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
+<!-- about -->
+
+## :information_source: About
+
+Object Oriented Programming
+
+## :rocket: Tech Stack
+
+- Python
+- BeautifulSoup
+- Bootstrap
+- Flask
+- Chart.js
+- Jsonpickle
+- Datatables
+- Icons8
 
 ## :computer: Usage
 
@@ -70,8 +85,6 @@ Open repo in new terminal widnow
 then go to [http://localhost:5000/](http://localhost:5000/) in your browser
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-## :rocket: Tech Stack
 
 ## :pencil: License
 

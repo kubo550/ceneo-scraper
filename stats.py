@@ -1,10 +1,9 @@
-data = [{'author': ' a...4', 'comment_date': '2021-04-21 00:03:16', 'purchase_date': '2021-04-11 18:31:21', 'opinion': 'Tsad sad ', 'recomendation': 'Polecam', 'score': '5/5', 'likes': '7', 'dislikes': '2', 'props': 8, 'cons': None}, {'author': ' Krystian', 'comment_date': '2021-04-13 11:44:09', 'purchase_date': '2021-04-13 16:52:10', 'opinion': 'Jakość tej generacji panelu oled jest bezdyskusyjna, więc wspomnę o innych cechach. Przede wszystkim wygląd - design tego produktu jest fenomenalny, naprawdę robi wrażenie. Przy tej klasie sprzętu i tak najpewniej korzystać będziemy z systemu kina domowego, stereo, albo soundbara, ale wbudowane głośniki w tak płaskim sprzęcie zadziwiają jakością. Jakość i ergonomia jest na wysokim poziomie, nawet sam system prowadzenia kabli jest dobrze przemyślany. Jeśli komuś nie zależy na samym wyglądzie i nieznacznej poprawie wyświetlania, może śmiało zejść do serii C. Mam mały zarzut do systemu i pilota, które wmuszają nieużywane przez nas usługi. Dodatkowo asystent google nie działa według LG w Polsce, co jest nieprawdą - a na pilocie jest przycisk do asystenta google. Asystent LG póki co wydaje się trochę niemądry, ale podobno ma się uczyć komend. Podłączana klawiatura działa z systemem, ale nie z aplikacjami, więc jest to bezużyteczne.', 'recomendation': 'Polecam', 'score': '4,5/5', 'likes': '7', 'dislikes': '3', 'props': 10, 'cons': 4}, {'author': ' Zbigniew', 'comment_date': '2021-12-07 19:52:58', 'purchase_date': '2021-11-08 08:04:29', 'opinion': 'Bardzo dobry obraz, przyzwoity dźwięk (jak na tak płaski telewizor) bogate oprogramowanie sieciowe. Spełnia wszystkie moje oczekiwania.', 'recomendation': 'Polecam', 'score': '5/5', 'likes': '2', 'dislikes': '0', 'props': None, 'cons': None}, {'author': ' r...r', 'comment_date': '2022-03-17 08:46:06', 'purchase_date': '2022-02-27 01:58:23', 'opinion': 'Obraz na części kanałów nie powala, widać gorszą jakość z odtwarzacza super więc to problem sygnału TV. G13LA można zawiesić tylko na ścianie (jest specjalny wieszak) brak nóżek umożliwiających postawienie na stoliku/komodzie. Pilot sprawia wrażenie delikatnego.  TV mam krótko i został jeszcze dobrze sprawdzony. Widać jednak wyraźną poprawę czerni w porównaniu do wcześniejszego LED. Jasność jest spora , ale w słonecznym pokoju lepiej opuścić rolety. Widać na nim kiepską jakość sygnału TV pomimo cyfrowego dekodera c+ ', 'recomendation': 'Polecam', 'score': '5/5', 'likes': '0', 'dislikes': '0', 'props': 1, 'cons': None}, {'author': ' Zbigniew', 'comment_date': '2021-12-07 19:52:58', 'purchase_date': '2021-11-08 08:04:29', 'opinion': 'Jak na moje potrzeby telewizor doskonały. Bardzo dobry obraz, dobry dźwięk (jak na płaską budowę), bogate oprogramowanie "smart". Powieszony na ścianie wzbudza zainteresowanie.', 'recomendation': 'Polecam', 'score': '5/5', 'likes': '2', 'dislikes': '0', 'props': None, 'cons': None}, {'author': ' Michał', 'comment_date': '2021-10-04 17:28:52', 'purchase_date': '2021-09-25 07:19:59', 'opinion': 'Super jakość obrazu i piękny design. Uchwyt, który powoduje iż TV wygląda jak obraz :). Teraz wiem co to jest przewaga Oled !', 'recomendation': 'Polecam', 'score': '5/5', 'likes': '5', 'dislikes': '0', 'props': 4, 'cons': None}, {'author': ' Joe Zavala', 'comment_date': '2021-05-30 19:22:09', 'purchase_date': '2021-05-15 12:31:46', 'opinion': 'jest gitara', 'recomendation': 'Polecam', 'score': '5/5', 'likes': '3', 'dislikes': '1', 'props': 8, 'cons': None}, {'author': ' t...o', 'comment_date': '2022-03-18 12:06:10', 'purchase_date': '2022-03-17 15:00:40', 'opinion': 'Telewizor extra. Polecam', 'recomendation': 'Polecam', 'score': '5/5', 'likes': '0', 'dislikes': '0', 'props': 4, 'cons': None}, {'author': ' Radosław ', 'comment_date': '2021-12-25 23:36:02', 'purchase_date': 'Brak', 'opinion': 'Najpierw pozytywy: wygląd telewizora, jakość obrazu i dźwięku pozytywnie mnie zaskoczył. Uchwyt który się chowa w obudowę telewizora super rozwiązanie, aby TV wisiał na ścianie jak obraz. Na tym koniec. Telewizor jest krzywy - zarówno ten który przywiózł mi kurier, jak i ten który jest na wystawce w MM cz Euro (co sprawdziłem). Czyżby w PL są dostępne produkty 2 kategorii, tak jak kiedyś robił SONY? Przykładając podkładkę z biurka widać na dole ile brakuje, aby TV był prosty. Usterka (to że tv jest krzywy) zgłoszona do serwisu LG przez stronę *****. Następie oddzwania Pani z infolinii, dopytując czy aby na pewno nie popełniłem błędu w montażu tv na ścianie, a następnie sugeruje, abym położył tv na płaskiej powierzchni i spróbował go lekko przegiąć, aby był prosty. Biorąc pod uwagę fachowość serwisu LG (lepiej niech będzie krzywy, bo jak się za niego wezmą ci fachowcy, to w lepszym stanie nie wróci) postanowiłem odpuścić. Ciesząc się z super obrazu i dźwięku, tv jednak się nie poddaje i chce za wszelką cenę trafić do serwisu bo...psuje się. Telewizor działał 1 dzień, po czym zaczął wydawać odgłosy niczym fajerwerki (głos z głośników chyba na maxa) a na ekranie kasza / różne kolory. Szkoda że nie można wkleić filmu. Moja córka tak uciekała, że aż papcie pogubiła. Teraz jestem tylko ciekaw, czy dostanę nowy tv, czy będą naprawiać ten.', 'recomendation': 'Nie polecam', 'score': '1/5', 'likes': '0', 'dislikes': '5', 'props': 5, 'cons': 1}, {'author': ' Grzegorz', 'comment_date': '2021-08-10 14:09:44', 'purchase_date': '2021-12-30 09:31:13', 'opinion': 'Niestety jestem rozczarowany jakością telewizora LG G1. To co zwraca szczególna uwagę to różowy tint widoczny na połowie ekranu. Oglądanie czarnobiałych filmów było nieprzyjemnym przeżyciem, zresztą różowe zabarwienie było obecne także w wielu innych przypadkach (np. w jasnych scenach). Sama jasność w porównaniu do LG E9 się nie zmieniła, dodatkowo brak DTS również uważam za wadę. Telewizor powieszony na ścianie wygląda bardzo ładnie, jednak dostęp do wejść HDMI, USB jest wtedy bardzo utrudniony. Nowy WebOS to również krok wstecz - jest nieintuicyjny, wolny i po wejściu do ekranu domowego zajmuje cały ekran. W poprzednich wersjach na dole pojawiała się belka z aplikacjami i ciągle można było oglądać telewizje, teraz pojawia się ekran z różnymi propozycjami filmów, a same aplikacje to mały pasek. Jakie z kolei widzę plusy - cóż tu już bardziej mogę powiedzieć o wszystkich telewizorach OLED czyli nieskończona czerń i kontrast. natomiast konkretnie plus dla LG G1 należy się  całkiem niezły dźwięk wydobywający się z głośników telewizora i tak jak pisałem na początku wygląd.', 'recomendation': 'Nie polecam', 'score': '2,5/5', 'likes': '3', 'dislikes': '14', 'props': 1, 'cons': 2}]
-
+import math
 class Stats:
     @staticmethod
     def get_recomendations(reviews):
         recomendation = {'polecam': 0, 'nie_polecam': 0}
-        for review in data:
+        for review in reviews:
             if review['recomendation'] == 'Polecam':
                 recomendation['polecam'] += 1
             else:
@@ -13,9 +12,27 @@ class Stats:
 
     @staticmethod
     def get_ratings(reviews):
-        score = {'1': 0, '1,5': 0, '2': 0, '2,5': 0, '3': 0, '3,5': 0, '4': 0, '4,5': 0, '5': 0}
+        score = {'0,5': 1 , '1': 0, '1,5': 0, '2': 0, '2,5': 0, '3': 0, '3,5': 0, '4': 0, '4,5': 0, '5': 0}
         
-        for review in data:
+        for review in reviews:
             rating = review['score'].split('/')[0]
             score[rating] += 1
         return score
+
+    @staticmethod
+    def calculate_stats(reviews):
+        stats = {}
+        stats['number_of_opinions'] = len(reviews)
+        number_of_props = 0
+        number_of_cons = 0
+        sum_of_ratings = 0
+ 
+        for review in reviews:
+            number_of_props += review['props']
+            number_of_cons += review['cons']
+            sum_of_ratings += float(review['score'].split('/')[0].replace(',', '.'))
+
+        stats['number_of_props'] = number_of_props
+        stats['number_of_cons'] = number_of_cons
+        stats['mean_rating'] = round(sum_of_ratings / len(reviews), 2) 
+        return stats

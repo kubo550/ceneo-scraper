@@ -18,9 +18,12 @@
 
     .badges img {
       margin-top: 35px;
-
+      margin-right: 15px;
     }
   </style>
+
+  <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+
 </head>
 
 <body>
@@ -32,13 +35,13 @@
           <a href="/" class="nav-link" aria-current="page">Home</a>
         </li>
         <li class="nav-item">
-          <a href="/about" class="nav-link active">O autorze</a>
+          <a href="/about" class="nav-link active">About Me</a>
         </li>
         <li class="nav-item">
-          <a href="/product" class="nav-link">Ekstrakcja opinii</a>
+          <a href="/product" class="nav-link">Ekstract Opinions</a>
         </li>
         <li class="nav-item">
-          <a href="/opinion" class="nav-link">Lista produktów</a>
+          <a href="/product-list" class="nav-link">Products List</a>
         </li>
       </ul>
     </header>
@@ -76,14 +79,12 @@
             alt="" />
           <img src="https://img.shields.io/badge/-Firebase-05122A?style=flat&logo=Firebase" alt="" />
           <img src="https://img.shields.io/badge/-lodash-05122A?style=flat&logo=lodash" alt="" />
-          <img src="https://img.shields.io/badge/-Figma-05122A?style=flat&logo=Figma" alt="" />
-          <img src="http://img.shields.io/badge/-MySQL-05122A?style=flat&logo=mysql&logoColor=4479A1" alt="" />
+
         </div>
         <div class="col-lg-6">
-          <h1 class="display-5 fw-bold lh-1 mb-3">ABOUT ME</h1>
-          <p class="lead">I am 20 yo polish programmer. I just after high school and before studies, so this is the
-            perfect moment to get first
-            job as a forntend-developer. I hope we will come to an agreement.</p>
+          <h1 class="display-5 fw-bold lh-1 mb-3 text-light">Jakub Kurdziel</h1>
+          <p class="lead text-light">I am 21 yo polish programmer. Currently I work as a Implementation Engineer at
+            Warsaw company Talkie.ai. I started my adventure with programming almost 3 years ago</p>
           <div class="d-grid gap-2 d-md-flex justify-content-md-start">
             <button type="button" class="btn btn-primary btn-lg px-4 me-md-2"><a class="text-decoration-none text-white"
                 href="https://wonderful-hugle-16c351.netlify.app/">More</a> </button>

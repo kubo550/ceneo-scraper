@@ -1,25 +1,52 @@
 from bs4 import BeautifulSoup
 import requests
-
+import math
 
 class Scraper:
 
     def __init__(self, product_id):
         self.product_id = product_id
-
+        self.page_html = requests.get(self.get_product_url())
+        self.soup =  BeautifulSoup(self.page_html.text, 'html.parser')
 
     def get_product_url(self):
         return "https://www.ceneo.pl/" + self.product_id + "#tab=reviews"
 
+    def get_product_name(self):
+        return get_value_for_element(self.soup, "h1", "product-top__product-info__name") or "Nie udało się pobrać nazwy produktu"
+
 
     def get_all_opinions(self):
-        page_html = requests.get(self.get_product_url())
-        soup = BeautifulSoup(page_html.text, 'html.parser')
-        user_reviews = soup.find_all("div", class_="user-post__body")
-        reviews = self.remove_non_opinions(user_reviews)
-        if len(reviews) == 0:
-            raise Exception("No reviews found")
-        return reviews
+        elements = self.soup.find_all("span", class_="page-tab__title js_prevent-middle-button-click")
+        if(len(elements) == 0):
+            raise Exception("Enter correct product id")
+
+        num_of_opinions = elements[2].text or "0"
+        try:  
+            num_of_opinions = int(num_of_opinions.replace("Opinie i Recenzje (", "").replace(")", ""))
+        except:
+            raise Exception("This Product has no opinions")
+        
+        page_num = 1
+        if num_of_opinions > 300:
+            raise Exception("This Product has more than 100 opinions, enter a different product id")
+    
+        all_pages = math.ceil(num_of_opinions / 10) 
+        
+        all_reviews = []
+
+        while page_num <= all_pages:
+            page_html = requests.get('https://www.ceneo.pl/'+ self.product_id +'/opinie-' + str(page_num))
+            soup = BeautifulSoup(page_html.text, 'html.parser')
+            user_reviews = soup.find_all("div", class_="user-post__body")
+            reviews = self.remove_non_opinions(user_reviews)
+            all_reviews.extend(reviews)
+            page_num += 1
+
+       
+        if len(all_reviews) == 0:
+            raise Exception("No reviews found enter a different product id")
+        return all_reviews
 
 
     def remove_non_opinions(self, user_reviews):
@@ -54,8 +81,8 @@ class Scraper:
         if dislike_button is not None:
             review_details["dislikes"] = dislike_button.find("span").text
 
-        review_details["props"] = None
-        review_details["cons"] = None
+        review_details["props"] = 0
+        review_details["cons"] = 0
         features = review.find_all("div", class_="review-feature__col")
 
         if (len(features) > 0):
