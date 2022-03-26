@@ -24,6 +24,23 @@
 
 <!-- GETTING STARTED -->
 
+## :book: Description
+
+| Składowa             | Selektor                                                    | Zmienna       |
+| -------------------- | ----------------------------------------------------------- | ------------- |
+| opinia               | div.js_product-review                                       | review        |
+| id opinii            | div.js_product-review\[data-entry-id\]                      | review_id     |
+| autor                | .user-post\_\_author-name                                   | author        |
+| rekomendacja         | .user-post\_\_author-recomendation > em                     | recomendation |
+| liczba gwiazdek      | .user-post\_\_score-count                                   | score_count   |
+| treść                | .user-post\_\_text                                          | content       |
+| data wystawienia     | span.user-post\_\_published > time\[datetime\]:nth-child(1) | publish_date  |
+| data zakupu          | span.user-post\_\_published > time\[datetime\]:nth-child(2) | purchase_date |
+| dla ilu przydatna    |                                                             | useful        |
+| dla ilu nieprzydatna |                                                             | useless       |
+| liczba zalet         | review-feature                                              | pros          |
+| liczba wad           | review-feature                                              | cons          |
+
 ## :runner: Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
@@ -53,6 +70,8 @@ Open repo in new terminal widnow
 then go to [http://localhost:5000/](http://localhost:5000/) in your browser
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
+## :rocket: Tech Stack
 
 ## :pencil: License
 

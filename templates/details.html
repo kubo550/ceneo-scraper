@@ -13,6 +13,12 @@
     />
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+      canvas {
+        margin: 0 auto;
+      }
+    </style>
   </head>
   <body>
     <!-- Navbar -->
@@ -39,32 +45,20 @@
         <a href="https://www.ceneo.pl/{{ id }}" target="_blank"> {{ id }} </a>
       </h1>
 
-      <canvas id="myChart"></canvas>
-      <canvas id="myChart2"></canvas>
+      <canvas id="myChart" width="700" height="700"></canvas>
+      <canvas id="myChart2" width="1400" height="700"></canvas>
     </div>
 
     <script>
       let product_data = "{{ product_data }}";
-      product_data = JSON.parse(
-        product_data
-          .replace(/&#39;/gm, '"')
-          .replace(/True/gm, "true")
-          .replace(/False/gm, "false")
-          .replace(/None/gm, "null")
-          .replace(/\n/gm, "")
-      );
+      product_data = extractDataFromFlask(product_data);
 
       let score = "{{ rating }}";
-      score = JSON.parse(
-        score
-          .replace(/&#39;/gm, '"')
-          .replace(/True/gm, "true")
-          .replace(/False/gm, "false")
-          .replace(/None/gm, "null")
-          .replace(/\n/gm, "")
-      );
+      score = extractDataFromFlask(score);
 
-      const labels = Object.keys(product_data);
+      const labels = Object.keys(product_data).map(name =>
+        name.replace("_", " ")
+      );
       const dataValues = Object.values(product_data);
       const data = {
         labels: labels,
@@ -81,7 +75,7 @@
         type: "pie",
         data,
         options: {
-          responsive: true,
+          responsive: false,
           plugins: {
             legend: {
               position: "top",
@@ -96,11 +90,12 @@
 
       const myChart = new Chart(document.getElementById("myChart"), config);
 
-      //   TODO
-      console.log(score);
+      const barSortedData = Object.entries(score).sort((a, b) =>
+        a[0] > b[0] ? 1 : -1
+      );
 
       const data2 = {
-        labels: Object.keys(score),
+        labels: barSortedData.map(x => x[0]),
         datasets: [
           {
             label: "Ocena produktu",
@@ -116,7 +111,7 @@
               "#00FF00",
             ],
 
-            data: Object.values(score),
+            data: barSortedData.map(x => x[1]),
           },
         ],
       };
@@ -125,20 +120,31 @@
         type: "bar",
         data: data2,
         options: {
-          responsive: true,
+          responsive: false,
           plugins: {
             legend: {
               position: "top",
             },
             title: {
               display: true,
-              text: "Chart.js Floating Bar Chart",
+              text: "Ilość gwiazdek danego produktu",
             },
           },
         },
       };
 
       const myChart2 = new Chart(document.getElementById("myChart2"), config2);
+
+      function extractDataFromFlask(data) {
+        return JSON.parse(
+          data
+            .replace(/&#39;/gm, '"')
+            .replace(/True/gm, "true")
+            .replace(/False/gm, "false")
+            .replace(/None/gm, "null")
+            .replace(/\n/gm, "")
+        );
+      }
     </script>
   </body>
 </html>

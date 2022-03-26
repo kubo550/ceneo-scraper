@@ -7,10 +7,22 @@ class Scraper:
     def __init__(self, product_id):
         self.product_id = product_id
 
+
+    def get_product_url(self):
+        return "https://www.ceneo.pl/" + self.product_id + "#tab=reviews"
+
+
     def get_all_opinions(self):
         page_html = requests.get(self.get_product_url())
         soup = BeautifulSoup(page_html.text, 'html.parser')
         user_reviews = soup.find_all("div", class_="user-post__body")
+        reviews = self.remove_non_opinions(user_reviews)
+        if len(reviews) == 0:
+            raise Exception("No reviews found")
+        return reviews
+
+
+    def remove_non_opinions(self, user_reviews):
         reviews = []
         for review in user_reviews:
             review_details = self.get_review_details(review)
@@ -20,8 +32,6 @@ class Scraper:
             reviews.append(review_details)
         return reviews
 
-    def get_product_url(self):
-        return "https://www.ceneo.pl/" + self.product_id + "#tab=reviews"
 
     def get_review_details(self, review):
         review_details = {}
