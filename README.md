@@ -26,7 +26,6 @@
 
 ## :book: Description
 
-<div align="center">
 | Składowa             | Selektor                                                    | Zmienna       |
 | -------------------- | ----------------------------------------------------------- | ------------- |
 | opinia               | div.js_product-review                                       | review        |
@@ -42,7 +41,6 @@
 | liczba zalet         | review-feature                                              | pros          |
 | liczba wad           | review-feature                                              | cons          |
 
-</div>
 ## :runner: Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
