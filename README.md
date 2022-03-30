@@ -86,6 +86,10 @@ then go to [http://localhost:5000/](http://localhost:5000/) in your browser
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## :exclamation: Important Note
+
+Make sure you have disabled VPN before running the app. Ceneo.pl website is blocked by VPN. You can find more information about VPN [here](https://www.vpnbook.com/freevpn).
+
 ## :pencil: License
 
 This project is licensed under [MIT](https://opensource.org/licenses/MIT) license.
@@ -93,3 +97,4 @@ This project is licensed under [MIT](https://opensource.org/licenses/MIT) licens
 ## :man_astronaut: Show your support
 
 Give a ⭐️ if this project helped you!
+
