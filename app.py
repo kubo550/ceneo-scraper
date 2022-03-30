@@ -12,9 +12,7 @@ app = Flask(__name__, template_folder="templates")
 
 @app.route(rule='/', methods=['GET'])
 def index():
-    return render_template('index.html')
-
-
+    return render_template('index.jinja')
 
 
 @app.route(rule='/product', methods=['GET'])
@@ -44,11 +42,9 @@ def _product():
         return render_template('product.html', error=e)
 
 
-
-
 @app.route(rule='/about', methods=['GET'])
 def about():
-    return render_template('about.html')
+    return render_template('about.jinja')
 
 @app.route(rule='/opinion', methods=['GET'])
 def opinion():     
