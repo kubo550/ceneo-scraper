@@ -20,7 +20,7 @@ def _product():
     product_id = request.args.get('product_id')
 
     if product_id is None:
-        return render_template('product.html')
+        return render_template('product.jinja')
     try:
         ceneo_scraper = Scraper(product_id)
         product_name = ceneo_scraper.get_product_name()
@@ -36,10 +36,10 @@ def _product():
         json_product_reviews = jsonpickle.encode(product_reviews)
 
 
-        return render_template('opinion.html', product_reviews=product_reviews, product_id=product_id, json=json_product_reviews, number_of_reviews=len(product_reviews))
+        return render_template('opinion.jinja', product_reviews=product_reviews, product_id=product_id, json=json_product_reviews, number_of_reviews=len(product_reviews))
     except Exception as e:
         print("Error: ", e)
-        return render_template('product.html', error=e)
+        return render_template('product.jinja', error=e)
 
 
 @app.route(rule='/about', methods=['GET'])
@@ -48,7 +48,7 @@ def about():
 
 @app.route(rule='/opinion', methods=['GET'])
 def opinion():     
-    return render_template('product.html', error="Aby przejść do strony opinii, wpisz id produktu.") 
+    return render_template('product.jinja', error="Aby przejść do strony opinii, wpisz id produktu.") 
 
 
 @app.route(rule='/details/<product_id>', methods=['GET'])
@@ -58,12 +58,12 @@ def details(product_id):
     product_data = Stats.get_recomendations(reviews)
     rating = Stats.get_ratings(reviews)
     product_name = store.get_product_name(product_id)
-    return render_template('details.html', id=product_id, product_data=product_data, rating=rating,product_name=product_name)
+    return render_template('details.jinja', id=product_id, product_data=product_data, rating=rating,product_name=product_name)
 
 @app.route(rule='/product-list', methods=['GET'])
 def product_list():
     products = store.get_all_products()
-    return render_template('product-list.html', products=products, products_len=len(products))
+    return render_template('product-list.jinja', products=products, products_len=len(products))
 
 if __name__ == '__main__':
     app.run()
