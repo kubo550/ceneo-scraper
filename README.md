@@ -13,12 +13,12 @@
 
 <div align="center">
 
-<a href="https://github.com/jakub20kurdziel/ceneo-scraper/stargazers"><img src="https://img.shields.io/github/stars/jakub20kurdziel/ceneo-scraper" alt="Stars Badge"/></a>
-<a href="https://github.com/jakub20kurdziel/ceneo-scraper/network/members"><img src="https://img.shields.io/github/forks/jakub20kurdziel/ceneo-scraper" alt="Forks Badge"/></a>
-<a href="https://github.com/jakub20kurdziel/ceneo-scraper/pulls"><img src="https://img.shields.io/github/issues-pr/jakub20kurdziel/ceneo-scraper" alt="Pull Requests Badge"/></a>
-<a href="https://github.com/jakub20kurdziel/ceneo-scraper/issues"><img src="https://img.shields.io/github/issues/jakub20kurdziel/ceneo-scraper" alt="Issues Badge"/></a>
-<a href="https://github.com/jakub20kurdziel/ceneo-scraper/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/jakub20kurdziel/ceneo-scraper?color=2b9348"></a>
-<a href="https://github.com/elangosundar/awesome-README-templates/blob/master/LICENSE"><img src="https://img.shields.io/github/license/jakub20kurdziel/ceneo-scraper?color=2b9348" alt="License Badge"/></a>
+<a href="https://github.com/kubo550/ceneo-scraper/stargazers"><img src="https://img.shields.io/github/stars/kubo550/ceneo-scraper" alt="Stars Badge"/></a>
+<a href="https://github.com/kubo550/ceneo-scraper/network/members"><img src="https://img.shields.io/github/forks/kubo550/ceneo-scraper" alt="Forks Badge"/></a>
+<a href="https://github.com/kubo550/ceneo-scraper/pulls"><img src="https://img.shields.io/github/issues-pr/kubo550/ceneo-scraper" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/kubo550/ceneo-scraper/issues"><img src="https://img.shields.io/github/issues/kubo550/ceneo-scraper" alt="Issues Badge"/></a>
+<a href="https://github.com/kubo550/ceneo-scraper/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/kubo550/ceneo-scraper?color=2b9348"></a>
+<a href="https://github.com/elangosundar/awesome-README-templates/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kubo550/ceneo-scraper?color=2b9348" alt="License Badge"/></a>
 
 </div>
 
@@ -26,20 +26,20 @@
 
 ## :book: Description
 
-| Składowa             | Selektor                                                    | Zmienna       |
-| -------------------- | ----------------------------------------------------------- | ------------- |
-| opinia               | div.js_product-review                                       | review        |
-| id opinii            | div.js_product-review\[data-entry-id\]                      | review_id     |
-| autor                | .user-post\_\_author-name                                   | author        |
-| rekomendacja         | .user-post\_\_author-recomendation > em                     | recomendation |
-| liczba gwiazdek      | .user-post\_\_score-count                                   | score_count   |
-| treść                | .user-post\_\_text                                          | content       |
-| data wystawienia     | span.user-post\_\_published > time\[datetime\]:nth-child(1) | publish_date  |
-| data zakupu          | span.user-post\_\_published > time\[datetime\]:nth-child(2) | purchase_date |
-| dla ilu przydatna    |                                                             | useful        |
-| dla ilu nieprzydatna |                                                             | useless       |
-| liczba zalet         | review-feature                                              | pros          |
-| liczba wad           | review-feature                                              | cons          |
+|Składowa|Selektor|Zmienna|
+|--------|--------|-------|
+|opinia|div.js_product-review|review|
+|identyfikator opinii|\[data-entry-id\]|review_id|
+|autor|span.user-post__author-name|author|
+|rekomendacja|span.user-post__author-recomendation > em|recommendation|
+|liczba gwiazdek|span.user-post__score-count|stars|
+|treść|div.user-post__text|content|
+|data wystawienia|span.user-post__published > time:nth-child(1)\[datetime\]|publish_date|
+|data zakupu|span.user-post__published > time:nth-child(2)\[datetime\]|purchase_date|
+|dla ilu przydatna|button.vote-yes[data-total-vote]<br>button.vote-yes > span<br>span[id^=votes-yes]|useful|
+|dla ilu nieprzydatna|button.vote-no[data-total-vote]<br>button.vote-no > span<br>span[id^=votes-no]|useless|
+|lista zalet|div.review-feature__title--positives ~ div.review-feature__item <br>div.review-feature__col:has( > div.review-feature__title--positives) > div.review-feature__item<br>div.review-feature__item:has( ~ div.review-feature__title--positives)|pros|
+|lista wad|div.review-feature__title--negatives ~ div.review-feature__item <br>div.review-feature__col:has( > div.review-feature__title--negatives) > div.review-feature__item<br>div.review-feature__item:has( ~ div.review-feature__title--negatives)|cons|
 
 ## :runner: Getting Started
 
