@@ -18,7 +18,7 @@
 <a href="https://github.com/kubo550/ceneo-scraper/pulls"><img src="https://img.shields.io/github/issues-pr/kubo550/ceneo-scraper" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/kubo550/ceneo-scraper/issues"><img src="https://img.shields.io/github/issues/kubo550/ceneo-scraper" alt="Issues Badge"/></a>
 <a href="https://github.com/kubo550/ceneo-scraper/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/kubo550/ceneo-scraper?color=2b9348"></a>
-<a href="https://github.com/elangosundar/awesome-README-templates/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kubo550/ceneo-scraper?color=2b9348" alt="License Badge"/></a>
+<a href="https://github.com/kubo550/ceneo-scraper/blob/master/LICENSE"><img src="https://img.shields.io/github/license/kubo550/ceneo-scraper?color=2b9348" alt="License Badge"/></a>
 
 </div>
 
