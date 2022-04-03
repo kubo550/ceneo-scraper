@@ -63,6 +63,10 @@ _Below is an example of how you can instruct your audience on installing and set
 
 Object Oriented Programming
 
+## 👀 Preview
+
+[preview](https://raw.githubusercontent.com/kubo550/ceneo-scraper/master/gh/preview.png)
+
 ## :rocket: Tech Stack
 
 - Python
