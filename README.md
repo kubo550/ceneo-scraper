@@ -65,7 +65,7 @@ Object Oriented Programming
 
 ## 👀 Preview
 
-[preview](https://raw.githubusercontent.com/kubo550/ceneo-scraper/master/gh/preview.png)
+<img src="https://raw.githubusercontent.com/kubo550/ceneo-scraper/master/gh/preview.png" alt"preview" />
 
 ## :rocket: Tech Stack
 
