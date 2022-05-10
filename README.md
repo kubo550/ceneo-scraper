@@ -11,6 +11,9 @@
   </p>
 </div>
 
+
+<img src="https://stack-stats.herokuapp.com/stats?id=14513625" alt="stack stats" />&nbsp;
+
 <div align="center">
 
 <a href="https://github.com/kubo550/ceneo-scraper/stargazers"><img src="https://img.shields.io/github/stars/kubo550/ceneo-scraper" alt="Stars Badge"/></a>
