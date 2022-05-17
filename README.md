@@ -1,5 +1,8 @@
 <div align="center">
-
+  <a href="https://github.com/jakub20kurdziel/ceneo-scraper">
+    <img src="https://raw.githubusercontent.com/othneildrew/Best-README-Template/master/images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+  
   <h3 align="center">Ceneo scraper</h3>
 
   <p align="center">
@@ -8,8 +11,6 @@
   </p>
 </div>
 
-
-<img src="https://stack-stats.herokuapp.com/stats?id=14513625" alt="stack stats" />&nbsp;
 
 <div align="center">
 
